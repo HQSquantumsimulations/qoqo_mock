@@ -1,0 +1,5 @@
+qoqo>=0.2.2
+numpy
+pytest
+networkx
+pyyaml
