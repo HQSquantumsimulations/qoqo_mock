@@ -147,7 +147,7 @@ def _execute_GateOperation(
         calculator: Optional[Calculator] = None,
         **kwargs) -> None:
     operation = cast(ops.GateOperation, operation)
-    if operation._parameterized is True and calculator is None:
+    if operation._parametrized is True and calculator is None:
         raise ops.OperationNotInBackendError(
             'Interactive pyQuEST can not be called with symbolic parameters'
             + ', substitute parameters first')
