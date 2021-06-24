@@ -1,3 +1,5 @@
+<img src="qoqo_Logo_vertical_color.png" alt="qoqo logo" width="300" />
+
 # qoqo-mock interface
 
 [![Documentation Status](https://readthedocs.org/projects/qoqo_mock/badge/?version=latest)](https://qoqo_mock.readthedocs.io/en/latest/?badge=latest)
