@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../qoqo"
+		},
+		{
+			"path": "../../../qoqo-mock"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}

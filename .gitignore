@@ -3,3 +3,9 @@ target/*
 *__pycache__/*
 .mypy_cache*
 *.egg-info*
+*.profraw
+*.DS_Store*
+coverage.lcov
+coverage/*
+coveragehtml/*
+*.pytest_cache*

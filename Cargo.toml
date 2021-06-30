@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "roqoqo-mock",
+]
+
+[profile.release]
+lto = true
+
+[profile.bench]
+lto = true
