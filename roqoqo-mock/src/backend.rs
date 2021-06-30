@@ -20,6 +20,10 @@ use roqoqo::registers::{
 use roqoqo::RoqoqoBackendError;
 use std::collections::HashMap;
 
+type BitOutputRegisterMap = HashMap<String, BitOutputRegister>;
+type FloatOutputRegisterMap = HashMap<String, FloatOutputRegister>;
+type ComplexOutputRegisterMap = HashMap<String, ComplexOutputRegister>;
+
 /// Mocked backend to qoqo
 ///
 /// Provides functions to run circuits and measurements.
@@ -98,9 +102,9 @@ impl EvaluatingBackend for Backend {
         circuit: impl Iterator<Item = &'a Operation>,
     ) -> Result<
         (
-            HashMap<String, BitOutputRegister>,
-            HashMap<String, FloatOutputRegister>,
-            HashMap<String, ComplexOutputRegister>,
+            BitOutputRegisterMap,
+            FloatOutputRegisterMap,
+            ComplexOutputRegisterMap,
         ),
         RoqoqoBackendError,
     > {
@@ -232,42 +236,39 @@ impl EvaluatingBackend for Backend {
         }
 
         for (key, mut value) in bit_registers.clone() {
-            if internal_bit_registers.contains_key(&key) {
-                if !internal_bit_registers
+            if internal_bit_registers.contains_key(&key)
+                && !internal_bit_registers
                     .get(&key)
                     .unwrap()
                     .to_vec()
                     .is_empty()
-                {
-                    value.push(internal_bit_registers.get(&key).unwrap().to_vec());
-                    bit_registers.insert(key, value);
-                }
+            {
+                value.push(internal_bit_registers.get(&key).unwrap().to_vec());
+                bit_registers.insert(key, value);
             }
         }
         for (key, mut value) in float_registers.clone() {
-            if internal_float_registers.contains_key(&key) {
-                if !internal_float_registers
+            if internal_float_registers.contains_key(&key)
+                && !internal_float_registers
                     .get(&key)
                     .unwrap()
                     .to_vec()
                     .is_empty()
-                {
-                    value.push(internal_float_registers.get(&key).unwrap().to_vec());
-                    float_registers.insert(key, value);
-                }
+            {
+                value.push(internal_float_registers.get(&key).unwrap().to_vec());
+                float_registers.insert(key, value);
             }
         }
         for (key, mut value) in complex_registers.clone() {
-            if internal_complex_registers.contains_key(&key) {
-                if !internal_complex_registers
+            if internal_complex_registers.contains_key(&key)
+                && !internal_complex_registers
                     .get(&key)
                     .unwrap()
                     .to_vec()
                     .is_empty()
-                {
-                    value.push(internal_complex_registers.get(&key).unwrap().to_vec());
-                    complex_registers.insert(key, value);
-                }
+            {
+                value.push(internal_complex_registers.get(&key).unwrap().to_vec());
+                complex_registers.insert(key, value);
             }
         }
 

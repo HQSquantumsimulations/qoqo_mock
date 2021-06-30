@@ -23,7 +23,7 @@ use roqoqo::RoqoqoBackendError;
 use std::collections::HashMap;
 
 // Pragma operations that are ignored by backend and do not throw an error
-const ALLOWED_OPERATIONS: &'static [&'static str; 14] = &[
+const ALLOWED_OPERATIONS: &[&str; 14] = &[
     "PragmaSetNumberOfMeasurements",
     "PragmaSetStateVector",
     "PragmaSetDensityMatrix",
@@ -39,6 +39,12 @@ const ALLOWED_OPERATIONS: &'static [&'static str; 14] = &[
     "PragmaSleep",
     "PragmaGlobalPhase",
 ];
+
+type BitRegisterMap = HashMap<String, BitRegister>;
+type FloatRegisterMap = HashMap<String, FloatRegister>;
+type ComplexRegisterMap = HashMap<String, ComplexRegister>;
+type BitOutputRegisterMap = HashMap<String, BitOutputRegister>;
+type ComplexOutputRegisterMap = HashMap<String, ComplexOutputRegister>;
 
 /// Executes mocked qoqo Circuit.
 ///
@@ -90,20 +96,20 @@ const ALLOWED_OPERATIONS: &'static [&'static str; 14] = &[
 pub fn call_circuit(
     circuit: &Circuit,
     mut registers: (
-        HashMap<String, BitRegister>,
-        HashMap<String, FloatRegister>,
-        HashMap<String, ComplexRegister>,
-        HashMap<String, BitOutputRegister>,
-        HashMap<String, ComplexOutputRegister>,
+        BitRegisterMap,
+        FloatRegisterMap,
+        ComplexRegisterMap,
+        BitOutputRegisterMap,
+        ComplexOutputRegisterMap,
     ),
     number_qubits: usize,
 ) -> Result<
     (
-        HashMap<String, BitRegister>,
-        HashMap<String, FloatRegister>,
-        HashMap<String, ComplexRegister>,
-        HashMap<String, BitOutputRegister>,
-        HashMap<String, ComplexOutputRegister>,
+        BitRegisterMap,
+        FloatRegisterMap,
+        ComplexRegisterMap,
+        BitOutputRegisterMap,
+        ComplexOutputRegisterMap,
     ),
     RoqoqoBackendError,
 > {
@@ -134,20 +140,20 @@ pub fn call_circuit(
 pub fn call_operation(
     operation: &Operation,
     registers: (
-        HashMap<String, BitRegister>,
-        HashMap<String, FloatRegister>,
-        HashMap<String, ComplexRegister>,
-        HashMap<String, BitOutputRegister>,
-        HashMap<String, ComplexOutputRegister>,
+        BitRegisterMap,
+        FloatRegisterMap,
+        ComplexRegisterMap,
+        BitOutputRegisterMap,
+        ComplexOutputRegisterMap,
     ),
     number_qubits: usize,
 ) -> Result<
     (
-        HashMap<String, BitRegister>,
-        HashMap<String, FloatRegister>,
-        HashMap<String, ComplexRegister>,
-        HashMap<String, BitOutputRegister>,
-        HashMap<String, ComplexOutputRegister>,
+        BitRegisterMap,
+        FloatRegisterMap,
+        ComplexRegisterMap,
+        BitOutputRegisterMap,
+        ComplexOutputRegisterMap,
     ),
     RoqoqoBackendError,
 > {
@@ -248,8 +254,8 @@ pub fn call_operation(
             } else {
                 statevec = matrix_1.clone();
             }
-            for i in 1..number_qubits {
-                if res_qubits[i] == 0 {
+            for item in res_qubits.iter().take(number_qubits).skip(1) {
+                if item == &0 {
                     statevec = kronecker_fn(&statevec, &matrix_0);
                 } else {
                     statevec = kronecker_fn(&statevec, &matrix_1);
@@ -295,20 +301,20 @@ pub fn call_operation(
     }
 }
 
-fn kronecker_fn(a: &Vec<Vec<Complex64>>, b: &Vec<Vec<Complex64>>) -> Vec<Vec<Complex64>> {
-    let m = a.len();
-    let n = a[0].len();
-    let p = b.len();
-    let q = b[0].len();
-    let rtn = m * p;
-    let ctn = n * q;
+fn kronecker_fn(left: &[Vec<Complex64>], right: &[Vec<Complex64>]) -> Vec<Vec<Complex64>> {
+    let mindex = left.len();
+    let nindex = left[0].len();
+    let pindex = right.len();
+    let qindex = right[0].len();
+    let rtn = mindex * pindex;
+    let ctn = nindex * qindex;
     let mut r = zero_matrix(rtn, ctn);
 
-    for i in 0..m {
-        for j in 0..n {
-            for k in 0..p {
-                for l in 0..q {
-                    r[p * i + k][q * j + l] = a[i][j] * b[k][l];
+    for i in 0..mindex {
+        for j in 0..nindex {
+            for k in 0..pindex {
+                for l in 0..qindex {
+                    r[pindex * i + k][qindex * j + l] = left[i][j] * right[k][l];
                 }
             }
         }
