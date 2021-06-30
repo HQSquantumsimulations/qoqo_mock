@@ -162,7 +162,8 @@ def mocked_call_operation(
         if operation.readout() not in classical_bit_registers.keys():
             classical_bit_registers[operation.readout()] = [False for _ in range(number_qubits)]
         else:
-            classical_bit_registers[operation.readout()][operation.readout_index()] = res
+            index = cast(int, operation.readout_index())
+            classical_bit_registers[operation.readout()][index] = res
     elif 'PragmaRepeatedMeasurement' in tags:
         operation = cast(ops.PragmaRepeatedMeasurement, operation)
         output_bit_register_dict[operation.readout()] = np.random.randint(
