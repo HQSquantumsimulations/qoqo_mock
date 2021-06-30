@@ -233,7 +233,12 @@ impl EvaluatingBackend for Backend {
 
         for (key, mut value) in bit_registers.clone() {
             if internal_bit_registers.contains_key(&key) {
-                if !internal_bit_registers.get(&key).unwrap().to_vec().is_empty() {
+                if !internal_bit_registers
+                    .get(&key)
+                    .unwrap()
+                    .to_vec()
+                    .is_empty()
+                {
                     value.push(internal_bit_registers.get(&key).unwrap().to_vec());
                     bit_registers.insert(key, value);
                 }
@@ -241,7 +246,12 @@ impl EvaluatingBackend for Backend {
         }
         for (key, mut value) in float_registers.clone() {
             if internal_float_registers.contains_key(&key) {
-                if !internal_float_registers.get(&key).unwrap().to_vec().is_empty() {
+                if !internal_float_registers
+                    .get(&key)
+                    .unwrap()
+                    .to_vec()
+                    .is_empty()
+                {
                     value.push(internal_float_registers.get(&key).unwrap().to_vec());
                     float_registers.insert(key, value);
                 }
@@ -249,7 +259,12 @@ impl EvaluatingBackend for Backend {
         }
         for (key, mut value) in complex_registers.clone() {
             if internal_complex_registers.contains_key(&key) {
-                if !internal_complex_registers.get(&key).unwrap().to_vec().is_empty() {
+                if !internal_complex_registers
+                    .get(&key)
+                    .unwrap()
+                    .to_vec()
+                    .is_empty()
+                {
                     value.push(internal_complex_registers.get(&key).unwrap().to_vec());
                     complex_registers.insert(key, value);
                 }
@@ -259,5 +274,3 @@ impl EvaluatingBackend for Backend {
         Ok((bit_registers, float_registers, complex_registers))
     }
 }
-
-

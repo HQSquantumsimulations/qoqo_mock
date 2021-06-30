@@ -197,14 +197,11 @@ fn test_debug_clone_partialeq() {
     let backend = Backend::new(0_usize);
 
     // Test Debug trait
-    assert_eq!(
-        format!("{:?}", backend),
-        "Backend { number_qubits: 0 }"
-    );
+    assert_eq!(format!("{:?}", backend), "Backend { number_qubits: 0 }");
 
     // Test Clone trait
     assert_eq!(backend.clone(), backend);
-    
+
     // PartialEq
     let backend_0 = Backend::new(0_usize);
     let backend_2 = Backend::new(2_usize);
