@@ -163,7 +163,7 @@ def mocked_call_operation(
             classical_bit_registers[operation.readout()] = [False for _ in range(number_qubits)]
         else:
             index = cast(int, operation.readout_index())
-            classical_bit_registers[operation.readout()][index] = res
+            classical_bit_registers[operation.readout()][index] = res  # type: ignore
     elif 'PragmaRepeatedMeasurement' in tags:
         operation = cast(ops.PragmaRepeatedMeasurement, operation)
         output_bit_register_dict[operation.readout()] = np.random.randint(
