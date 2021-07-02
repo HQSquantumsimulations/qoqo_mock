@@ -23,6 +23,11 @@ This backend is designed purely for benchmarking purposes.
 
 ## roqoqo-mock
 
+[![Crates.io](https://img.shields.io/crates/v/roqoqo-mock)](https://crates.io/crates/roqoqo-mock)
+[![GitHub Workflow Status](https://github.com/HQSquantumsimulations/qoqo_mock/workflows/ci_tests/badge.svg)](https://github.com/HQSquantumsimulations/qoqo_mock/actions)
+[![docs.rs](https://img.shields.io/docsrs/roqoqo-mock)](https://docs.rs/roqoqo-mock/)
+![Crates.io](https://img.shields.io/crates/l/roqoqo-mock)
+
 Mocking backend for the roqoqo quantum toolkit by [HQS Quantum Simulations](https://quantumsimulations.de).
 
 roqoqo-mock provides a mocked benchmarking backend for roqoqo.
