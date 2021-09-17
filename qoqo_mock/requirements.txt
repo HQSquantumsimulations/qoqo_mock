@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 qoqo>=1.0.0-a2
+=======
+qoqo>=0.6.0
+>>>>>>> 0596161 (updating dependencies)
 numpy
 sphinx >= 1.4
