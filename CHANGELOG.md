@@ -1,5 +1,6 @@
 # Changelog
 
+<<<<<<< HEAD
 This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
@@ -24,3 +25,12 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 ## 0.2.0
 
 * Updated qoqo/roqoqo dependencies to 0.6
+=======
+This changelog track changes to the qoqo project starting at version 0.5.0
+
+## Not released
+
+## 0.2.0
+
+* Updated qooq/roqoqo dependencies to 0.6
+>>>>>>> a01249d (updated dependencies)
