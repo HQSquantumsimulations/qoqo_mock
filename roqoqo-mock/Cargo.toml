@@ -1,6 +1,6 @@
 [package]
 name = "roqoqo-mock"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["HQS Quantum Simulations <info@quantumsimulations.de>"]
 license = "Apache-2.0"
 edition = "2018"
@@ -8,6 +8,7 @@ categories = ["science", "simulation"]
 readme = "../README.md"
 repository = "https://github.com/HQSquantumsimulations/qoqo"
 description = "Mocked interface for roqoqo rust quantum computing toolkit"
+exclude = ["tests*", "*.code-workspace"]
 
 [lib]
 name = "roqoqo_mock"
@@ -17,12 +18,12 @@ doctest = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-roqoqo = {version="0.1", features=["serialize"]}
-qoqo_calculator = { version="0.2"}
+roqoqo = {version="0.6", features=["serialize"]}
+qoqo_calculator = { version="0.3"}
 rand = "0.8"
-num-complex = { version = "0.3"}
-roqoqo-test = {version="0.1"}
+num-complex = { version = "0.4"}
+roqoqo-test = {version="0.6"}
 
 
 [dev.dependencies]
-nalgebra = "0.26"
+nalgebra = "0.29"
