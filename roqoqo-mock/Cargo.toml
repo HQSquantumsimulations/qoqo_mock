@@ -22,7 +22,7 @@ roqoqo = {version="0.6", features=["serialize"]}
 qoqo_calculator = { version="0.3"}
 rand = "0.8"
 num-complex = { version = "0.4"}
-roqoqo-test = {version="0.6"}
+roqoqo-test = {version="0.8"}
 
 
 [dev.dependencies]
