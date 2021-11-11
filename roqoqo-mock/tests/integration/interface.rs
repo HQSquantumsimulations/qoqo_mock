@@ -42,7 +42,7 @@ fn test_pragma_repeated_measurement() {
     let mut circuit = Circuit::new();
     circuit += DefinitionBit::new("ro".to_string(), 1, true);
     circuit += PauliX::new(0);
-    circuit += PragmaRepeatedMeasurement::new("ro".to_string(), Some(HashMap::new()), 20);
+    circuit += PragmaRepeatedMeasurement::new("ro".to_string(), 20, Some(HashMap::new()));
     let (_b, _f, _c, output_bit_registers, _co) = call_circuit(&circuit, empty_regs(), 2).unwrap();
     assert!(output_bit_registers.contains_key("ro"));
     let out_reg = output_bit_registers.get("ro").unwrap();
