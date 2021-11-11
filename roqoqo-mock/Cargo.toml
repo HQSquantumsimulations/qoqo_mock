@@ -1,6 +1,6 @@
 [package]
 name = "roqoqo-mock"
-version = "0.1.1"
+version = "0.2.1"
 authors = ["HQS Quantum Simulations <info@quantumsimulations.de>"]
 license = "Apache-2.0"
 edition = "2018"
@@ -8,6 +8,7 @@ categories = ["science", "simulation"]
 readme = "../README.md"
 repository = "https://github.com/HQSquantumsimulations/qoqo"
 description = "Mocked interface for roqoqo rust quantum computing toolkit"
+exclude = ["tests*", "*.code-workspace"]
 
 [lib]
 name = "roqoqo_mock"
@@ -25,4 +26,4 @@ roqoqo-test = {version="0.8.2"}
 
 
 [dev.dependencies]
-nalgebra = "0.26"
+nalgebra = "0.29"
