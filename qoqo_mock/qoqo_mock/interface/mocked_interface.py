@@ -142,7 +142,7 @@ def mocked_call_operation(
         stuff
 
     Raises:
-        RuntimeError: - FIX THIS
+        RuntimeError: Operation cannot be mocked
 
     """
     tags = operation.tags()
