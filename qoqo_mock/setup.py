@@ -27,7 +27,7 @@ with open(os.path.join(path, 'qoqo_mock/__version__.py')) as f:
 __version__ = lines[-1].strip().split("'")[1].strip()
 
 install_requires = [
-    'qoqo>=0.8.2',
+    'qoqo>=0.9.0',
     'numpy',
 ]
 
