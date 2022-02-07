@@ -84,13 +84,19 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9, 3.10]
+        python: [
+            {py: '3.6', interpreter: "python3.6"},
+            {py: '3.7', interpreter: "python3.7"},
+            {py: '3.8', interpreter: "python3.8"},
+            {py: '3.9', interpreter: "python3.9"},
+            {py: '3.10', interpreter: "python3.10"}
+        ]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ matrix.python.py }}
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
