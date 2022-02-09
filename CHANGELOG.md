@@ -4,7 +4,7 @@ This changelog track changes to the qoqo project starting at version 0.5.0
 
 ## Not released
 
-* qoqo_mock_ can now be built using a source distribution
+* qoqo_mock can now be built using a source distribution
 
 ## 0.2.1
 
