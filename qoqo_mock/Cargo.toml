@@ -5,7 +5,11 @@ authors = ["HQS Quantum Simulations <info@quantumsimulations.de>"]
 license = "Apache-2.0"
 edition = "2018"
 categories = ["science", "simulation","ffi"]
+readme = "README.md"
+homepage = "https://github.com/HQSquantumsimulations/qoqo_mock"
+repository = "https://github.com/HQSquantumsimulations/qoqo_mock"
 description = "Python interface of roqoqo mocked backend"
+include = ["src*", "qoqo_mock", "LICENSE", "pyproject.toml", "README.md"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
