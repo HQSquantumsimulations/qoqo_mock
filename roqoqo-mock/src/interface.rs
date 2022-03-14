@@ -244,16 +244,15 @@ pub fn call_operation(
             let mut rng = rand::thread_rng();
             let res_qubits: Vec<usize> = (0..number_qubits).map(|_| rng.gen_range(0..2)).collect();
 
-            let mut statevec: Vec<Vec<Complex64>>;
             let matrix_0: Vec<Vec<Complex64>> =
                 vec![vec![Complex64::new(1.0, 0.0), Complex64::new(0.0, 0.0)]];
             let matrix_1: Vec<Vec<Complex64>> =
                 vec![vec![Complex64::new(0.0, 0.0), Complex64::new(1.0, 0.0)]];
-            if res_qubits[0] == 0 {
-                statevec = matrix_0.clone();
+            let mut statevec: Vec<Vec<Complex64>> = if res_qubits[0] == 0 {
+                matrix_0.clone()
             } else {
-                statevec = matrix_1.clone();
-            }
+                matrix_1.clone()
+            };
             for item in res_qubits.iter().take(number_qubits).skip(1) {
                 if item == &0 {
                     statevec = kronecker_fn(&statevec, &matrix_0);
