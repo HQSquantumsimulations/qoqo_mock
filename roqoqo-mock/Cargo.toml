@@ -1,6 +1,10 @@
 [package]
 name = "roqoqo-mock"
+<<<<<<< HEAD
 version = "0.4.5"
+=======
+version = "0.4.4"
+>>>>>>> 839e076fcb9ee7e745214bfb5eb3e92cc05cd111
 authors = ["HQS Quantum Simulations <info@quantumsimulations.de>"]
 license = "Apache-2.0"
 edition = "2018"
