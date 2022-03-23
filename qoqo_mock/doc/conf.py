@@ -161,7 +161,7 @@ html_static_path = []
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'qoqopyquestdoc'
+htmlhelp_basename = 'qoqomockdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -188,8 +188,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'qoqopyquest.tex', 'qoqo pyquest Documentation',
-     'Kirsten Bark, Jan Reiner, Nicolas Vogt, Sebastian Zanker', 'manual'),
+    (master_doc, 'qoqo_mock.tex', 'qoqo_mock Documentation',
+     'HQS Quantum Simulations GmbH', 'manual'),
 ]
 
 
@@ -198,7 +198,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'qoqopyquest', 'qoqo pyquest Documentation',
+    (master_doc, 'qoqo_mock', 'qoqo_mock Documentation',
      [author], 1)
 ]
 
@@ -209,8 +209,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'qoqopyquest', 'qoqo pyquest Documentation',
-     author, 'qoqopyquest', 'One line description of project.',
+    (master_doc, 'qoqo_mock', 'qoqo_mock Documentation',
+     author, 'qoqo_mock', 'Mocked backend for qoqo quantum computing toolkit.',
      'Miscellaneous'),
 ]
 
