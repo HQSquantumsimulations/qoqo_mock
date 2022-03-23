@@ -4,7 +4,7 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
 
-## 0.4.5
+## 0.4.6
 
 * Changed documentation upload form
 * Made versioning uniform
