@@ -1,9 +1,5 @@
-qoqo>=0.10.0
-<<<<<<< HEAD
-qoqo_mock>=0.1.1
-=======
+qoqo>=0.11.3
 qoqo_mock>=0.4.6
->>>>>>> df08c6888bf948724fdcd357f2a25ac3ad9b1ef5
 numpy
 sphinx >= 2.1
 nbsphinx
