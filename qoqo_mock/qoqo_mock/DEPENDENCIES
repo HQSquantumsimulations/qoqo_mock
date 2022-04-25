@@ -6143,7 +6143,7 @@ limitations under the License.
 
 
 ====================================================
-pyo3 0.15.1
+pyo3 0.16.4
 https://github.com/pyo3/pyo3
 by PyO3 Project and Contributors <https://github.com/PyO3>
 Bindings to Python interpreter
@@ -6943,7 +6943,7 @@ LICENSE:
 
 
 ====================================================
-qoqo_calculator 0.6.1
+qoqo_calculator 0.7.0
 https://github.com/HQSquantumsimulations/qoqo_calculator
 by HQS Quantum Simulations <info@quantumsimulations.de>
 qoqo-calculator is the calculator backend of the qoqo quantum computing toolkit by HQS Quantum Simulations
@@ -7155,7 +7155,7 @@ LICENSE:
 
 
 ====================================================
-qoqo_mock 0.2.2
+qoqo_mock 0.4.6
 https://github.com/HQSquantumsimulations/qoqo_mock
 by HQS Quantum Simulations <info@quantumsimulations.de>
 Python interface of roqoqo mocked backend
@@ -8590,7 +8590,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ====================================================
-roqoqo 0.10.0
+roqoqo 0.11.3
 https://github.com/HQSquantumsimulations/qoqo
 by HQS Quantum Simulations <info@quantumsimulations.de>
 Rust Quantum Computing Toolkit by HQS
