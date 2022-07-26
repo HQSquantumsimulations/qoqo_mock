@@ -35,6 +35,7 @@ jobs:
           profile: minimal
           toolchain: stable
           components: clippy
+      - uses: Swatinem/rust-cache@v1
       - run: cargo clippy -- -D warnings
 
   unittests_check:
@@ -61,10 +62,14 @@ jobs:
           toolchain: stable
           target: ${{ matrix.combinations.rust }}
           default: true
+<<<<<<< HEAD
           components: rustfmt
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python.py }}
+=======
+      - uses: Swatinem/rust-cache@v1
+>>>>>>> 5b14b81 (add Planqk notice)
       - run: cargo test --package=roqoqo-mock
   
   format_check:
@@ -76,6 +81,7 @@ jobs:
           profile: minimal
           toolchain: stable
           components: rustfmt
+      - uses: Swatinem/rust-cache@v1
       - run: cargo fmt --all -- --check
 
   check_linting_and_tests:

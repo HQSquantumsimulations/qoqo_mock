@@ -1,4 +1,4 @@
-"""Install qoqo_mock"""
+"""Install qoqo_mock."""
 # Copyright © 2019-2021 HQS Quantum Simulations GmbH. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -27,7 +27,7 @@ with open(os.path.join(path, 'qoqo_mock/__version__.py')) as f:
 __version__ = lines[-1].strip().split("'")[1].strip()
 
 install_requires = [
-    'qoqo>=1.0.0-a2',
+    'qoqo>=1.0.0-alpha.5',
     'numpy',
 ]
 
