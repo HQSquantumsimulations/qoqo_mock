@@ -36,7 +36,7 @@ type ComplexOutputRegisterMap = HashMap<String, ComplexOutputRegister>;
 ///
 /// * `number_qubits` - Number of qubits in the Backend
 ///
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Backend {
     number_qubits: usize,
 }
