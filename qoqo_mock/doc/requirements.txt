@@ -1,5 +1,5 @@
 qoqo>=1.0.0
-qoqo_mock>=0.5.1
+qoqo_mock>=0.5.2
 numpy
 sphinx >= 2.1
 nbsphinx
