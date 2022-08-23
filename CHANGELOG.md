@@ -4,8 +4,9 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
 
-## Updated
-* Updated qoqo to 1.0.0-alpha.2 and qoqo_calculator to 0.8
+## 0.5.0
+
+* Updated qoqo to 1.0.0 and qoqo_calculator to 1.0.0
 
 ## 0.4.6
 
