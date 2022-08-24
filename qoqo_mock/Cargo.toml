@@ -20,7 +20,7 @@ doctest = false
 crate-type = ["cdylib", "rlib"]
 
 [dependencies.pyo3]
-version = "0.16"
+version = "0.17"
 features = ["num-complex"]
 
 [dependencies]
