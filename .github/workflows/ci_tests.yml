@@ -35,7 +35,7 @@ jobs:
           profile: minimal
           toolchain: stable
           components: clippy
-      - uses: Swatinem/rust-cache@v1
+      - uses: Swatinem/rust-cache@v2
       - run: cargo clippy -- -D warnings
 
   unittests_check:
@@ -62,7 +62,7 @@ jobs:
           toolchain: stable
           target: ${{ matrix.combinations.rust }}
           default: true
-      - uses: Swatinem/rust-cache@v1
+      - uses: Swatinem/rust-cache@v2
       - run: cargo test --package=roqoqo-mock
   
   format_check:
@@ -74,7 +74,7 @@ jobs:
           profile: minimal
           toolchain: stable
           components: rustfmt
-      - uses: Swatinem/rust-cache@v1
+      - uses: Swatinem/rust-cache@v2
       - run: cargo fmt --all -- --check
 
   check_linting_and_tests:
