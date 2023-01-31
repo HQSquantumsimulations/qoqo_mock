@@ -1,6 +1,6 @@
 [package]
 name = "qoqo_mock"
-version = "0.5.2"
+version = "0.5.3"
 authors = ["HQS Quantum Simulations <info@quantumsimulations.de>"]
 license = "Apache-2.0"
 edition = "2018"
@@ -20,17 +20,10 @@ doctest = false
 crate-type = ["cdylib", "rlib"]
 
 [dependencies.pyo3]
-version = "0.16"
-features = ["num-complex"]
+version = "0.17"
 
 [dependencies]
 
 [features]
-extension-module = ["pyo3/extension-module"]#, "qoqo_calculator_pyo3/extension-module"]
+extension-module = ["pyo3/extension-module"]
 default = ["extension-module"]
-
-[package.metadata.maturin]
-requires-dist = ["numpy"]
-maintainer = "HQS Quantum Simulations GmbH"
-maintainer-email = "info@quantumsimulations.de"
-requires-python = ">=3.7"
