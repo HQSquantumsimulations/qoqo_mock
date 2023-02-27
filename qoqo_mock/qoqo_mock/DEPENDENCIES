@@ -2982,7 +2982,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ====================================================
-nalgebra 0.31.4
+nalgebra 0.32.1
 https://nalgebra.org
 by Sébastien Crozet <developer@crozet.re>
 General-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices.
@@ -3194,7 +3194,7 @@ LICENSE:
 
 
 ====================================================
-nalgebra-macros 0.1.0
+nalgebra-macros 0.2.0
 https://nalgebra.org
 by Andreas Longva, Sébastien Crozet <developer@crozet.re>
 Procedural macros for nalgebra
@@ -4408,7 +4408,7 @@ limitations under the License.
 
 
 ====================================================
-once_cell 1.17.0
+once_cell 1.17.1
 https://github.com/matklad/once_cell
 by Aleksey Kladov <aleksey.kladov@gmail.com>
 Single assignment cells and lazy values.
@@ -5368,11 +5368,11 @@ limitations under the License.
 
 
 ====================================================
-petgraph 0.6.2
+petgraph 0.6.3
 https://github.com/petgraph/petgraph
 by bluss, mitchmindtree
 Graph data structure library. Provides graph types and graph algorithms.
-License: MIT/Apache-2.0
+License: MIT OR Apache-2.0
 ----------------------------------------------------
 LICENSE-MIT:
 
@@ -5850,7 +5850,7 @@ limitations under the License.
 
 
 ====================================================
-proc-macro2 1.0.50
+proc-macro2 1.0.51
 https://github.com/dtolnay/proc-macro2
 by David Tolnay <dtolnay@gmail.com>, Alex Crichton <alex@alexcrichton.com>
 A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.
@@ -7492,7 +7492,7 @@ LICENSE:
 
 
 ====================================================
-qoqo_calculator 1.1.0
+qoqo_calculator 1.1.1
 https://github.com/HQSquantumsimulations/qoqo_calculator
 by HQS Quantum Simulations <info@quantumsimulations.de>
 qoqo-calculator is the calculator backend of the qoqo quantum computing toolkit by HQS Quantum Simulations
@@ -9123,7 +9123,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ====================================================
-roqoqo 1.2.3
+roqoqo 1.2.5
 https://github.com/HQSquantumsimulations/qoqo
 by HQS Quantum Simulations <info@quantumsimulations.de>
 Rust Quantum Computing Toolkit by HQS
@@ -9335,7 +9335,7 @@ LICENSE:
 
 
 ====================================================
-roqoqo-derive 1.2.3
+roqoqo-derive 1.2.5
 by HQS Quantum Simulations <info@quantumsimulations.de>
 Macros for the roqoqo crate
 License: Apache-2.0
@@ -9758,7 +9758,7 @@ LICENSE:
 
 
 ====================================================
-roqoqo-test 1.2.3
+roqoqo-test 1.2.5
 https://github.com/HQSquantumsimulations/qoqo
 by HQS Quantum Simulations <info@quantumsimulations.de>
 Testing helper functions for roqoqo toolkit
@@ -10716,7 +10716,7 @@ limitations under the License.
 
 
 ====================================================
-simba 0.7.3
+simba 0.8.0
 https://github.com/dimforge/simba
 by sebcrozet <developer@crozet.re>
 SIMD algebra for Rust
@@ -11169,7 +11169,7 @@ limitations under the License.
 
 
 ====================================================
-syn 1.0.107
+syn 1.0.109
 https://github.com/dtolnay/syn
 by David Tolnay <dtolnay@gmail.com>
 Parser for Rust source code
@@ -11408,7 +11408,7 @@ limitations under the License.
 
 
 ====================================================
-target-lexicon 0.12.5
+target-lexicon 0.12.6
 https://github.com/bytecodealliance/target-lexicon
 by Dan Gohman <sunfish@mozilla.com>
 Targeting utilities for compilers and related tools
@@ -13351,7 +13351,7 @@ limitations under the License.
 
 
 ====================================================
-wide 0.7.6
+wide 0.7.8
 https://github.com/Lokathor/wide
 by Lokathor <zefria@gmail.com>
 A crate to help you go wide.
