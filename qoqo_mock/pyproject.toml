@@ -5,7 +5,7 @@ description = ""
 authors = [{name="HQS Quantum Simulation GmbH", email="info@quantumsimulations.de"}]
 readme = "README.md"
 dependencies = [
-    "qoqo_calculator>=1.1.0",
+    "qoqo_calculator_pyo3>=1.1.0",
     "qoqo>=1.2.5",
     "numpy",
 ]
