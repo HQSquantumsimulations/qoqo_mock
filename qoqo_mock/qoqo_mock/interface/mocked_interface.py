@@ -13,50 +13,48 @@
 
 from qoqo import operations as ops
 from qoqo import Circuit
-from typing import (
-    cast,
-    Dict,
-    List,
-    Any,
-    Tuple
-)
+from typing import cast, Dict, List, Any, Tuple
 import numpy as np
 
-_ALLOWED_PRAGMAS = ['PragmaSetNumberOfMeasurements',
-                    'PragmaSetStateVector',
-                    'PragmaSetDensityMatrix',
-                    'PragmaNoise',
-                    'PragmaDamping',
-                    'PragmaDepolarising',
-                    'PragmaDephasing',
-                    'PragmaRandomNoise',
-                    'PragmaGeneralNoise',
-                    'PragmaRepeatGate',
-                    'PragmaBoostNoise',
-                    'PragmaStopParallelBlock',
-                    'PragmaSleep',
-                    'PragmaGlobalPhase',
-                    'PragmaActiveReset',
-                    'InputSymbolic',
-                    'PragmaStartDecompositionBlock',
-                    'PragmaStopDecompositionBlock',
-                    'PragmaConditional']
+_ALLOWED_PRAGMAS = [
+    "PragmaSetNumberOfMeasurements",
+    "PragmaSetStateVector",
+    "PragmaSetDensityMatrix",
+    "PragmaNoise",
+    "PragmaDamping",
+    "PragmaDepolarising",
+    "PragmaDephasing",
+    "PragmaRandomNoise",
+    "PragmaGeneralNoise",
+    "PragmaRepeatGate",
+    "PragmaBoostNoise",
+    "PragmaStopParallelBlock",
+    "PragmaSleep",
+    "PragmaGlobalPhase",
+    "PragmaActiveReset",
+    "InputSymbolic",
+    "PragmaStartDecompositionBlock",
+    "PragmaStopDecompositionBlock",
+    "PragmaConditional",
+]
 
 
 def mocked_call_circuit(
-        circuit: Circuit,
-        classical_bit_registers: Dict[str, List[bool]],
-        classical_float_registers: Dict[str, List[float]],
-        classical_complex_registers: Dict[str, List[complex]],
-        output_bit_register_dict: Dict[str, List[List[bool]]],
-        output_complex_register_dict: Dict[str, List[List[complex]]],
-        number_qubits: int = 1,
-        **kwargs) -> Tuple[
-            Dict[str, List[bool]],
-            Dict[str, List[float]],
-            Dict[str, List[complex]],
-            Dict[str, List[List[bool]]],
-            Dict[str, List[List[complex]]]]:
+    circuit: Circuit,
+    classical_bit_registers: Dict[str, List[bool]],
+    classical_float_registers: Dict[str, List[float]],
+    classical_complex_registers: Dict[str, List[complex]],
+    output_bit_register_dict: Dict[str, List[List[bool]]],
+    output_complex_register_dict: Dict[str, List[List[complex]]],
+    number_qubits: int = 1,
+    **kwargs
+) -> Tuple[
+    Dict[str, List[bool]],
+    Dict[str, List[float]],
+    Dict[str, List[complex]],
+    Dict[str, List[List[bool]]],
+    Dict[str, List[List[complex]]],
+]:
     """Execute mocked qoqo circuit
 
     The Mocked interface is an interface which mock-simulates a quantum circuit. The quantum
@@ -87,11 +85,13 @@ def mocked_call_circuit(
 
     """
     for op in circuit:
-        (classical_bit_registers,
-         classical_float_registers,
-         classical_complex_registers,
-         output_bit_register_dict,
-         output_complex_register_dict) = mocked_call_operation(
+        (
+            classical_bit_registers,
+            classical_float_registers,
+            classical_complex_registers,
+            output_bit_register_dict,
+            output_complex_register_dict,
+        ) = mocked_call_operation(
             op,
             classical_bit_registers,
             classical_float_registers,
@@ -99,29 +99,34 @@ def mocked_call_circuit(
             output_bit_register_dict,
             output_complex_register_dict,
             number_qubits,
-            **kwargs)
+            **kwargs
+        )
 
-    return (classical_bit_registers,
-            classical_float_registers,
-            classical_complex_registers,
-            output_bit_register_dict,
-            output_complex_register_dict)
+    return (
+        classical_bit_registers,
+        classical_float_registers,
+        classical_complex_registers,
+        output_bit_register_dict,
+        output_complex_register_dict,
+    )
 
 
 def mocked_call_operation(
-        operation: Any,
-        classical_bit_registers: Dict[str, List[bool]],
-        classical_float_registers: Dict[str, List[float]],
-        classical_complex_registers: Dict[str, List[complex]],
-        output_bit_register_dict: Dict[str, List[List[bool]]],
-        output_complex_register_dict: Dict[str, List[List[complex]]],
-        number_qubits: int = 1,
-        **kwargs) -> Tuple[
-            Dict[str, List[bool]],
-            Dict[str, List[float]],
-            Dict[str, List[complex]],
-            Dict[str, List[List[bool]]],
-            Dict[str, List[List[complex]]]]:
+    operation: Any,
+    classical_bit_registers: Dict[str, List[bool]],
+    classical_float_registers: Dict[str, List[float]],
+    classical_complex_registers: Dict[str, List[complex]],
+    output_bit_register_dict: Dict[str, List[List[bool]]],
+    output_complex_register_dict: Dict[str, List[List[complex]]],
+    number_qubits: int = 1,
+    **kwargs
+) -> Tuple[
+    Dict[str, List[bool]],
+    Dict[str, List[float]],
+    Dict[str, List[complex]],
+    Dict[str, List[List[bool]]],
+    Dict[str, List[List[complex]]],
+]:
     """Execute mocked qoqo operation
 
     Args:
@@ -146,46 +151,53 @@ def mocked_call_operation(
 
     """
     tags = operation.tags()
-    if 'GateOperation' in tags:
+    if "GateOperation" in tags:
         pass
-    elif 'DefinitionFloat' in tags:
+    elif "DefinitionFloat" in tags:
         pass
-    elif 'DefinitionComplex' in tags:
+    elif "DefinitionComplex" in tags:
         pass
-    elif 'DefinitionBit' in tags:
+    elif "DefinitionBit" in tags:
         pass
-    elif 'DefinitionUsize' in tags:
+    elif "DefinitionUsize" in tags:
         pass
-    elif 'MeasureQubit' in tags:
+    elif "MeasureQubit" in tags:
         operation = cast(ops.MeasureQubit, operation)
         res = np.random.randint(0, 1)
         if operation.readout() not in classical_bit_registers.keys():
-            classical_bit_registers[operation.readout()] = [False for _ in range(number_qubits)]
+            classical_bit_registers[operation.readout()] = [
+                False for _ in range(number_qubits)
+            ]
         else:
             index = cast(int, operation.readout_index())
             classical_bit_registers[operation.readout()][index] = res  # type: ignore
-    elif 'PragmaRepeatedMeasurement' in tags:
+    elif "PragmaRepeatedMeasurement" in tags:
         operation = cast(ops.PragmaRepeatedMeasurement, operation)
         output_bit_register_dict[operation.readout()] = np.random.randint(
-            0, 2, size=(operation.number_measurements(), number_qubits)).tolist()
+            0, 2, size=(operation.number_measurements(), number_qubits)
+        ).tolist()
         if operation.readout() in classical_bit_registers.keys():
             del classical_bit_registers[operation.readout()]
-    elif 'PragmaGetPauliProduct' in tags:
+    elif "PragmaGetPauliProduct" in tags:
         operation = cast(ops.PragmaGetPauliProduct, operation)
-        classical_float_registers[operation.readout()] = [np.random.random(1).tolist(), ]
-    elif 'PragmaGetOccupationProbability' in tags:
+        classical_float_registers[operation.readout()] = [
+            np.random.random(1).tolist(),
+        ]
+    elif "PragmaGetOccupationProbability" in tags:
         operation = cast(ops.PragmaGetOccupationProbability, operation)
-        classical_float_registers[operation.readout()] = np.random.random(number_qubits).tolist()
-    elif 'PragmaGetStateVector' in tags:
+        classical_float_registers[operation.readout()] = np.random.random(
+            number_qubits
+        ).tolist()
+    elif "PragmaGetStateVector" in tags:
         operation = cast(ops.PragmaGetStateVector, operation)
         values = np.random.default_rng().uniform(0, 1, (2**number_qubits, 2))
         values_complex = values[..., 0] + 1j * values[..., 1]
         normalisation = 0
         for value in values_complex:
-            normalisation += abs(value)**2
+            normalisation += abs(value) ** 2
         values_normalised = values_complex / normalisation
         classical_complex_registers[operation.readout()] = values_normalised.tolist()
-    elif 'PragmaGetDensityMatrix' in tags:
+    elif "PragmaGetDensityMatrix" in tags:
         operation = cast(ops.PragmaGetDensityMatrix, operation)
         qubits = np.random.randint(0, 2, size=number_qubits)
         statevector = np.array([1])
@@ -194,15 +206,18 @@ def mocked_call_operation(
                 statevector = np.kron(np.array([1, 0]), statevector)
             else:
                 statevector = np.kron(np.array([0, 1]), statevector)
-        output_complex_register_dict[
-            operation.readout()] = np.kron(statevector[..., None], statevector).tolist()
+        output_complex_register_dict[operation.readout()] = np.kron(
+            statevector[..., None], statevector
+        ).tolist()
     elif any(pragma in tags for pragma in _ALLOWED_PRAGMAS):
         pass
     else:
         raise RuntimeError("Operation cannot be mocked")
 
-    return (classical_bit_registers,
-            classical_float_registers,
-            classical_complex_registers,
-            output_bit_register_dict,
-            output_complex_register_dict)
+    return (
+        classical_bit_registers,
+        classical_float_registers,
+        classical_complex_registers,
+        output_bit_register_dict,
+        output_complex_register_dict,
+    )

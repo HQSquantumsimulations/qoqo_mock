@@ -23,8 +23,5 @@ Mocks quantum computing simulation for performance tests.
 # or implied. See the License for the specific language governing permissions and limitations under
 # the License.
 from qoqo_mock.__version__ import __version__
-from qoqo_mock.interface import (
-    mocked_call_operation,
-    mocked_call_circuit
-)
+from qoqo_mock.interface import mocked_call_operation, mocked_call_circuit
 from qoqo_mock.backend import MockedBackend

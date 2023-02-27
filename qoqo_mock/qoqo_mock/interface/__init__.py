@@ -13,5 +13,5 @@
 
 from qoqo_mock.interface.mocked_interface import (
     mocked_call_operation,
-    mocked_call_circuit
+    mocked_call_circuit,
 )
