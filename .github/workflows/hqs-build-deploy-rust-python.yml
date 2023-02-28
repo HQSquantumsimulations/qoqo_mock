@@ -1,4 +1,4 @@
-name: HQS build and deploy for rust pyo3 repos
+name: HQS build and deploy for pure rust and pure python repos
 
 on:
   workflow_dispatch:

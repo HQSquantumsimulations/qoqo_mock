@@ -1,4 +1,4 @@
-name: HQS CI tests for rust pyo3 repos
+name: HQS CI tests for pure rust and pure python repos
 
 on:
   workflow_dispatch:

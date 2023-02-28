@@ -1,4 +1,4 @@
-name: HQS build Sphinx docs for rust pyo3 repos
+name: HQS build Sphinx docs for pure rust and pure python repos
 
 on:
   workflow_dispatch:
