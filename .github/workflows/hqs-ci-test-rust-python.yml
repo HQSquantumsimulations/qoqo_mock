@@ -59,4 +59,5 @@ jobs:
       - name: Test without coverage pytest
         run: |
           pip install qoqo_mock/
-          pytest qoqo_mock/tests/
+          cd qoqo_mock/tests/
+          pytest ./
