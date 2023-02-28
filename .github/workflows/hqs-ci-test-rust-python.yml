@@ -56,7 +56,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pytest numpy
-          pip install qoqo_mock/
       - name: Test without coverage pytest
         run: |
+          pip install qoqo_mock/
           pytest qoqo_mock/tests/
