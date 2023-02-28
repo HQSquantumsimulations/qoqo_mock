@@ -6,10 +6,13 @@ on:
     branches: ["main"]
 
 jobs:
-  linting:
+  linting_rust:
     uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_linting_rust_pyo3.yml@main
+  
+  linting_python:
+    uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_linting_pure_python.yml@main
 
-  unittests:
+  unittests_rust:
     uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_unittests_rust_pyo3.yml@main
     with:
       # Run tests also on windows runners
@@ -19,12 +22,12 @@ jobs:
       rust_package_name: "roqoqo-mock"
       test_code_coverage: false
 
-  build_tests:
-    uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_build_tests_rust_pyo3.yml@main
+  unittests_python:
+    uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_tests_pure_python.yml@main
     with: 
+      python_folder: "qoqo_mock"
+      test_code_coverage: false
       # Run tests also on windows runners
       windows: true
       # Run tests also on macos runners
       macos: true
-      py_interface_folder: "qoqo_mock"
-      has_python_tests: true
