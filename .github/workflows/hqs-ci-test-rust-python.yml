@@ -60,4 +60,4 @@ jobs:
         run: |
           cd qoqo_mock/
           pip install .
-          pytest tests/
+          pytest --cov=qoqo_mock tests/
