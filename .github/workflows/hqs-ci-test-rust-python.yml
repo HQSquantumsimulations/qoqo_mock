@@ -58,6 +58,7 @@ jobs:
           pip install pytest numpy
       - name: Test without coverage pytest
         run: |
-          pip install qoqo_mock/
-          cd qoqo_mock/tests/
+          cd qoqo_mock/
+          pip install ./
+          cd tests/
           pytest ./
