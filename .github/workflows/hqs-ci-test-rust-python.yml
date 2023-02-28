@@ -55,7 +55,7 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: |
-          pip install pytest numpy
+          pip install pytest numpy pytest-cov
       - name: Test without coverage pytest
         run: |
           cd qoqo_mock/
