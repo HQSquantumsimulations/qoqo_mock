@@ -13,7 +13,7 @@ jobs:
     uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_linting_pure_python.yml@main
     with: 
       python_folder: "qoqo_mock"
-      linting_folder: "qoqo_mock/qoqo_mock"
+      linting_folder: "qoqo_mock/src/qoqo_mock"
 
   unittests_rust:
     uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_unittests_rust_pyo3.yml@main
