@@ -34,3 +34,31 @@ jobs:
       windows: true
       # Run tests also on macos runners
       macos: true
+
+  manual_test_python_linux:
+    name: manual_test_python_linux-${{ matrix.python.interpreter }}
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        python: [
+            {py: '3.7', interpreter: "python3.7"},
+            {py: '3.8', interpreter: "python3.8"},
+            {py: '3.9', interpreter: "python3.9"},
+            {py: '3.10', interpreter: "python3.10"},
+            {py: '3.11', interpreter: "python3.11"},
+        ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python.py }}
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
+          pip install pytest numpy pytest-cov
+      - name: Test without coverage pytest
+        run: |
+          cd qoqo_mock/
+          pip install .
+          cd tests/
+          pytest .
