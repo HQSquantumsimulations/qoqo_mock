@@ -1,7 +1,6 @@
 [workspace]
 members = [
     "roqoqo-mock",
-    "qoqo_mock",
 ]
 
 [profile.release]
