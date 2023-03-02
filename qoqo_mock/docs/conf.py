@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+"""Configuration file for documentation."""
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # qoqo documentation build configuration file

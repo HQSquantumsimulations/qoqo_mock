@@ -4,6 +4,7 @@ version = "0.5.3"
 description = ""
 authors = [{name="HQS Quantum Simulation GmbH", email="info@quantumsimulations.de"}]
 readme = "README.md"
+license = { text="Apache-2.0" }
 dependencies = [
     "qoqo_calculator_pyo3>=1.1.0",
     "qoqo>=1.2.5",
@@ -12,12 +13,15 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
   'pytest',
+  'pytest-cov',
 ]
 dev = [
     'flake8',
     'flake8-bugbear',
     'flake8-pyproject',
     'flake8-pydocstyle',
+    'flake8-bandit',
+    'flake8-pyproject',
     'darglint',
     'bandit',
     'mypy',
@@ -29,9 +33,9 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [tool.flake8]
+ignore = ['D400', 'D401', 'W503', 'ANN101', 'ANN102', 'ANN002', 'ANN003', 'ANN401', 'S403', 'S404', 'S301']
 max-line-length = 100
-ignore = 'D400,D401,W503,ANN101,ANN102,ANN002,ANN003,ANN401,S403,S404,S301'
-exclude = '.git,__pycache__,doc/conf.py,old,build,dist,test_*'
+exclude = ['.git', '__pycache__', 'doc/conf.py', 'old', 'build', 'dist', 'test_*']
 docstring-convention = "google"
 per-file-ignores = [
     '__init__.py:F401',
@@ -42,5 +46,5 @@ ignore_missing_imports = true
 pretty = true
 follow_imports = "silent"
 
-[tool.bandit]
+# [tool.bandit]
 

@@ -1,3 +1,0 @@
-qoqo>=1.2.0
-numpy
-sphinx >= 1.4

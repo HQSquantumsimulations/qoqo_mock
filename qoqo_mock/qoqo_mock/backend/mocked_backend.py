@@ -1,4 +1,4 @@
-"""Mocked Backend"""
+"""Mocked Backend."""
 # Copyright © 2019-2023 HQS Quantum Simulations GmbH. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -16,7 +16,7 @@ from qoqo_mock import mocked_call_circuit
 
 
 class MockedBackend(object):
-    r"""Mocked backend to qoqo
+    r"""Mocked backend to qoqo.
 
     The mocked backend mock-simulates a quantum circuit on a given device by translating the qoqo
     circuit using the qoqo_mocked interface. This interface produces random measurements coherent
@@ -25,7 +25,7 @@ class MockedBackend(object):
     """
 
     def __init__(self, number_qubits: int = 1) -> None:
-        """Initialize backend
+        """Initialize backend.
 
         Args:
             number_qubits: The number of qubits to use
@@ -41,7 +41,7 @@ class MockedBackend(object):
         Dict[str, List[List[float]]],
         Dict[str, List[List[complex]]],
     ]:
-        """Run a circuit with the Mocked backend
+        """Run a circuit with the Mocked backend.
 
         Args:
             circuit: The circuit that is run
@@ -125,7 +125,7 @@ class MockedBackend(object):
         Dict[str, List[List[float]]],
         Dict[str, List[List[complex]]],
     ]:
-        """Run all circuits of a measurement with the Mocked backend
+        """Run all circuits of a measurement with the Mocked backend.
 
         Args:
             measurement: The measurement that is run
@@ -161,7 +161,7 @@ class MockedBackend(object):
         )
 
     def run_measurement(self, measurement: Any) -> Optional[Dict[str, float]]:
-        """Run a circuit with the Mocked backend
+        """Run a circuit with the Mocked backend.
 
         Args:
             measurement: The measurement that is run

@@ -55,7 +55,7 @@ def mocked_call_circuit(
     Dict[str, List[List[bool]]],
     Dict[str, List[List[complex]]],
 ]:
-    """Execute mocked qoqo circuit
+    """Execute mocked qoqo circuit.
 
     The Mocked interface is an interface which mock-simulates a quantum circuit. The quantum
     gates are not applied and the measurements produce random results coherent with the
@@ -127,7 +127,7 @@ def mocked_call_operation(
     Dict[str, List[List[bool]]],
     Dict[str, List[List[complex]]],
 ]:
-    """Execute mocked qoqo operation
+    """Execute mocked qoqo operation.
 
     Args:
         operation: The qoqo operation that is executed
