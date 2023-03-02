@@ -10,7 +10,7 @@ jobs:
     uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_linting_rust_pyo3.yml@main
   
   linting_python:
-    uses: kbarkhqs/reusable_workflows/.github/workflows/reusable_linting_pure_python.yml@main
+    uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_linting_pure_python.yml@main
     with: 
       python_folder: "qoqo_mock"
       linting_folder: "qoqo_mock"
@@ -26,7 +26,7 @@ jobs:
       test_code_coverage: false
 
   unittests_python:
-    uses: kbarkhqs/reusable_workflows/.github/workflows/reusable_tests_pure_python.yml@main
+    uses: HQSquantumsimulations/reusable_workflows/.github/workflows/reusable_tests_pure_python.yml@main
     with: 
       python_folder: "qoqo_mock"
       test_code_coverage: false
