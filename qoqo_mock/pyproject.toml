@@ -1,13 +1,13 @@
 [project]
 name = "qoqo_mock"
-version = "0.5.4"
+version = "0.5.5"
 description = ""
 authors = [{name="HQS Quantum Simulation GmbH", email="info@quantumsimulations.de"}]
 readme = "README.md"
 license = { text="Apache-2.0" }
 dependencies = [
     "qoqo_calculator_pyo3>=1.1.0",
-    "qoqo>=1.3",
+    "qoqo>=1.4",
     "numpy",
 ]
 [project.optional-dependencies]
@@ -26,6 +26,15 @@ dev = [
     'bandit',
     'mypy',
     'black'
+]
+
+docs = [
+    "sphinx >= 2.1",
+    "nbsphinx",
+    "pygments",
+    "recommonmark",
+    "myst_parser",
+    "sphinx_rtd_theme"
 ]
 
 [build-system]
