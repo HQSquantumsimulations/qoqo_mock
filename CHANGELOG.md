@@ -4,6 +4,14 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
 
+## 0.5.5
+
+* Update qoqo to 1.4
+
+## 0.5.4
+
+* Update qoqo to 1.3
+
 ## 0.5.3
 
 * Updated qoqo to 1.2.0

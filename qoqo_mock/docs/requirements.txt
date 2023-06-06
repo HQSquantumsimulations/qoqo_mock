@@ -1,9 +1,0 @@
-qoqo>=1.2.0
-qoqo_mock>=0.5.3
-numpy
-sphinx >= 2.1
-nbsphinx
-pygments
-recommonmark
-myst_parser
-sphinx_rtd_theme
