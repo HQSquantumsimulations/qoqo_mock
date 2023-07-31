@@ -47,7 +47,7 @@ def mocked_call_circuit(
     output_bit_register_dict: Dict[str, List[List[bool]]],
     output_complex_register_dict: Dict[str, List[List[complex]]],
     number_qubits: int = 1,
-    **kwargs
+    **kwargs,
 ) -> Tuple[
     Dict[str, List[bool]],
     Dict[str, List[float]],
@@ -99,7 +99,7 @@ def mocked_call_circuit(
             output_bit_register_dict,
             output_complex_register_dict,
             number_qubits,
-            **kwargs
+            **kwargs,
         )
 
     return (
@@ -164,17 +164,13 @@ def mocked_call_operation(
         operation = cast(ops.MeasureQubit, operation)
         res = np.random.randint(0, 1)  # noqa: NPY002
         if operation.readout() not in classical_bit_registers.keys():
-            classical_bit_registers[operation.readout()] = [
-                False for _ in range(number_qubits)
-            ]
+            classical_bit_registers[operation.readout()] = [False for _ in range(number_qubits)]
         else:
             index = cast(int, operation.readout_index())
             classical_bit_registers[operation.readout()][index] = res  # type: ignore
     elif "PragmaRepeatedMeasurement" in tags:
         operation = cast(ops.PragmaRepeatedMeasurement, operation)
-        output_bit_register_dict[
-            operation.readout()
-        ] = np.random.randint(  # noqa: NPY002
+        output_bit_register_dict[operation.readout()] = np.random.randint(  # noqa: NPY002
             0, 2, size=(operation.number_measurements(), number_qubits)
         ).tolist()
         if operation.readout() in classical_bit_registers.keys():
@@ -186,9 +182,7 @@ def mocked_call_operation(
         ]
     elif "PragmaGetOccupationProbability" in tags:
         operation = cast(ops.PragmaGetOccupationProbability, operation)
-        classical_float_registers[operation.readout()] = np.random.random(
-            number_qubits
-        ).tolist()
+        classical_float_registers[operation.readout()] = np.random.random(number_qubits).tolist()
     elif "PragmaGetStateVector" in tags:
         operation = cast(ops.PragmaGetStateVector, operation)
         values = np.random.default_rng().uniform(0, 1, (2**number_qubits, 2))

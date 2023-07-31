@@ -60,9 +60,7 @@ class MockedBackend(object):
         output_complex_register_dict: Dict[str, List[List[complex]]] = {}
 
         for bit_def in circuit.filter_by_tag("DefinitionBit"):
-            internal_bit_register_dict[bit_def.name()] = [
-                False for _ in range(bit_def.length())
-            ]
+            internal_bit_register_dict[bit_def.name()] = [False for _ in range(bit_def.length())]
             if bit_def.is_output():
                 output_bit_register_dict[bit_def.name()] = []
 
@@ -71,18 +69,14 @@ class MockedBackend(object):
                 0.0 for _ in range(float_def.length())
             ]
             if float_def.is_output():
-                output_float_register_dict[float_def.name()] = cast(
-                    List[List[float]], []
-                )
+                output_float_register_dict[float_def.name()] = cast(List[List[float]], [])
 
         for complex_def in circuit.filter_by_tag("DefinitionComplex"):
             internal_complex_register_dict[complex_def.name()] = [
                 complex(0.0) for _ in range(complex_def.length())
             ]
             if complex_def.is_output():
-                output_complex_register_dict[complex_def.name()] = cast(
-                    List[List[complex]], []
-                )
+                output_complex_register_dict[complex_def.name()] = cast(List[List[complex]], [])
 
         (
             internal_bit_register_dict,
