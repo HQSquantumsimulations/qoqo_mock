@@ -25,7 +25,8 @@ dev = [
     'darglint',
     'bandit',
     'mypy',
-    'black'
+    'black',
+    'ruff'
 ]
 
 docs = [
