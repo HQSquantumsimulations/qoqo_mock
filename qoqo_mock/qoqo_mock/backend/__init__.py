@@ -20,3 +20,5 @@
 from qoqo_mock.backend.mocked_backend import (
     MockedBackend,
 )
+
+__all__ = ["MockedBackend"]
