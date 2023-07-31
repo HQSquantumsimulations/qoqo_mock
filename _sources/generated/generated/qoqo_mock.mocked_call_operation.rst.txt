@@ -1,0 +1,6 @@
+qoqo\_mock.mocked\_call\_operation
+==================================
+
+.. currentmodule:: qoqo_mock
+
+.. autofunction:: mocked_call_operation

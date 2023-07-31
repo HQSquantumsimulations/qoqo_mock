@@ -1,0 +1,25 @@
+qoqo\_mock.MockedBackend
+========================
+
+.. currentmodule:: qoqo_mock
+
+.. autoclass:: MockedBackend
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MockedBackend.__init__
+      ~MockedBackend.run_circuit
+      ~MockedBackend.run_measurement
+      ~MockedBackend.run_measurement_registers
+   
+   
+
+   
+   
+   
