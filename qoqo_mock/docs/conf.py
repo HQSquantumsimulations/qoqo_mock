@@ -20,12 +20,12 @@
 
 # set __version__
 import tomli
+
 main_version = tomli.load(open("../pyproject.toml", "rb"))["project"]["version"]
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #
-# needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -66,7 +66,6 @@ autodoc_default_options = {
     #    'member-order': 'bysource',
     #    'special-members': '__init__',
     #    'undoc-members': False,
-    #    'exclude-members': '__weakref__'
 }
 # This value controls the docstrings inheritance. If set to True the docstring for classes
 # or methods, if not explicitly set, is inherited form parents.
@@ -77,7 +76,6 @@ templates_path = ["_templates"]
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
 source_suffix = {
     ".rst": "restructuredtext",
     ".txt": "markdown",
@@ -89,7 +87,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "qoqo_mock"
-copyright = "2019-2023, HQS Quantum Simulations GmbH"
+copyright = "2019-2023, HQS Quantum Simulations GmbH"  # noqa: A001
 author = "The qoqo developers"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -125,19 +123,15 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'alabaster'
-# html_theme = "bizstyle"
 html_theme = "sphinx_rtd_theme"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['_static']
 html_static_path = []
 
 # Custom sidebar templates, must be a dictionary that maps document names
@@ -145,15 +139,11 @@ html_static_path = []
 #
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-# html_sidebars = {
 #    '**': [
 #        'about.html',
 #        'navigation.html',
-#        'relations.html',  # needs 'show_related': True theme option to display
 #        'searchbox.html',
 #        'donate.html',
-#    ]
-# }
 
 
 # -- Options for HTMLHelp output ------------------------------------------
@@ -167,16 +157,12 @@ htmlhelp_basename = "qoqomockdoc"
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
     # Additional stuff for the LaTeX preamble.
     #
-    # 'preamble': '',
     # Latex figure (float) alignment
     #
-    # 'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples

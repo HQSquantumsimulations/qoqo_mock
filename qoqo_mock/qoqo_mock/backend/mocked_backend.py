@@ -51,20 +51,20 @@ class MockedBackend(object):
 
         """
         # Initializing the classical registers for calculation and output
-        internal_bit_register_dict: Dict[str, List[bool]] = dict()
-        internal_float_register_dict: Dict[str, List[float]] = dict()
-        internal_complex_register_dict: Dict[str, List[complex]] = dict()
+        internal_bit_register_dict: Dict[str, List[bool]] = {}
+        internal_float_register_dict: Dict[str, List[float]] = {}
+        internal_complex_register_dict: Dict[str, List[complex]] = {}
 
-        output_bit_register_dict: Dict[str, List[List[bool]]] = dict()
-        output_float_register_dict: Dict[str, List[List[float]]] = dict()
-        output_complex_register_dict: Dict[str, List[List[complex]]] = dict()
+        output_bit_register_dict: Dict[str, List[List[bool]]] = {}
+        output_float_register_dict: Dict[str, List[List[float]]] = {}
+        output_complex_register_dict: Dict[str, List[List[complex]]] = {}
 
         for bit_def in circuit.filter_by_tag("DefinitionBit"):
             internal_bit_register_dict[bit_def.name()] = [
                 False for _ in range(bit_def.length())
             ]
             if bit_def.is_output():
-                output_bit_register_dict[bit_def.name()] = list()
+                output_bit_register_dict[bit_def.name()] = []
 
         for float_def in circuit.filter_by_tag("DefinitionFloat"):
             internal_float_register_dict[float_def.name()] = [
@@ -72,7 +72,7 @@ class MockedBackend(object):
             ]
             if float_def.is_output():
                 output_float_register_dict[float_def.name()] = cast(
-                    List[List[float]], list()
+                    List[List[float]], []
                 )
 
         for complex_def in circuit.filter_by_tag("DefinitionComplex"):
@@ -81,7 +81,7 @@ class MockedBackend(object):
             ]
             if complex_def.is_output():
                 output_complex_register_dict[complex_def.name()] = cast(
-                    List[List[complex]], list()
+                    List[List[complex]], []
                 )
 
         (
@@ -137,9 +137,9 @@ class MockedBackend(object):
         # Initializing the classical registers for calculation and output
 
         constant_circuit = measurement.constant_circuit()
-        output_bit_register_dict: Dict[str, List[List[bool]]] = dict()
-        output_float_register_dict: Dict[str, List[List[float]]] = dict()
-        output_complex_register_dict: Dict[str, List[List[complex]]] = dict()
+        output_bit_register_dict: Dict[str, List[List[bool]]] = {}
+        output_float_register_dict: Dict[str, List[List[float]]] = {}
+        output_complex_register_dict: Dict[str, List[List[complex]]] = {}
         for circuit in measurement.circuits():
             if constant_circuit is None:
                 run_circuit = circuit
