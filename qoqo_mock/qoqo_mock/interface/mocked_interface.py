@@ -162,7 +162,7 @@ def mocked_call_operation(
         pass
     elif "MeasureQubit" in tags:
         operation = cast(ops.MeasureQubit, operation)
-        res = np.random.randinit(0, 1)
+        res = np.random.default_rng().integers(0, 1)
         if operation.readout() not in classical_bit_registers.keys():
             classical_bit_registers[operation.readout()] = [
                 False for _ in range(number_qubits)
@@ -172,7 +172,7 @@ def mocked_call_operation(
             classical_bit_registers[operation.readout()][index] = res  # type: ignore
     elif "PragmaRepeatedMeasurement" in tags:
         operation = cast(ops.PragmaRepeatedMeasurement, operation)
-        output_bit_register_dict[operation.readout()] = np.random.randinit(
+        output_bit_register_dict[operation.readout()] = np.random.default_rng().integers(
             0, 2, size=(operation.number_measurements(), number_qubits)
         ).tolist()
         if operation.readout() in classical_bit_registers.keys():
@@ -198,7 +198,7 @@ def mocked_call_operation(
         classical_complex_registers[operation.readout()] = values_normalised.tolist()
     elif "PragmaGetDensityMatrix" in tags:
         operation = cast(ops.PragmaGetDensityMatrix, operation)
-        qubits = np.random.randinit(0, 2, size=number_qubits)
+        qubits = np.random.default_rng().integers(0, 2, size=number_qubits)
         statevector = np.array([1])
         for qubit in qubits:
             if qubit == 0:
