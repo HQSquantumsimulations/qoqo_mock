@@ -1,13 +1,13 @@
 [project]
 name = "qoqo_mock"
-version = "0.5.6"
+version = "0.5.7"
 description = ""
 authors = [{name="HQS Quantum Simulation GmbH", email="info@quantumsimulations.de"}]
 readme = "README.md"
 license = { text="Apache-2.0" }
 dependencies = [
-    "qoqo_calculator_pyo3>=1.1.0",
-    "qoqo>=1.5",
+    "qoqo_calculator_pyo3>=1.1",
+    "qoqo>=1.8",
     "numpy",
 ]
 [project.optional-dependencies]
