@@ -11,7 +11,7 @@ This repository contains two components:
 
 ## qoqo-mock
 
-[![Documentation Status](https://readthedocs.org/projects/qoqo_mock/badge/?version=latest)](https://qoqo_mock.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/qoqo-mock/badge/?version=latest)](https://qoqo-mock.readthedocs.io/en/latest/?badge=latest)
 [![GitHub Workflow Status](https://github.com/HQSquantumsimulations/qoqo_mock/workflows/ci_tests/badge.svg)](https://github.com/HQSquantumsimulations/qoqo_mock/actions)
 [![PyPI](https://img.shields.io/pypi/v/qoqo_mock)](https://pypi.org/project/qoqo_mock/)
 ![PyPI - License](https://img.shields.io/pypi/l/qoqo_mock)
