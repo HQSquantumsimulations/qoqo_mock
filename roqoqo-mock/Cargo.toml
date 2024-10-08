@@ -1,6 +1,6 @@
 [package]
 name = "roqoqo-mock"
-version = "0.5.7"
+version = "0.5.8"
 authors = ["HQS Quantum Simulations <info@quantumsimulations.de>"]
 license = "Apache-2.0"
 edition = "2021"
@@ -18,8 +18,8 @@ doctest = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-roqoqo = {version="1.8", features=["serialize"]}
-roqoqo-test = {version="1.8"}
+roqoqo = { version = "1.15", features = ["serialize"] }
+roqoqo-test = { version = "1.15" }
 
 rand = "0.8"
-num-complex = { version = "0.4"}
+num-complex = { version = "0.4" }

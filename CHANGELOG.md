@@ -4,6 +4,10 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
 
+## 0.5.8
+
+* Update qoqo to 1.15 and update readme
+
 ## 0.5.7
 
 * Update qoqo to 1.8
