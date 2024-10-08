@@ -1,4 +1,5 @@
 """Define the mocked interface for qoqo operations."""
+
 # Copyright © 2019-2023 HQS Quantum Simulations GmbH. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -11,8 +12,8 @@
 # or implied. See the License for the specific language governing permissions and limitations under
 # the License.
 
-from qoqo import operations as ops
-from qoqo import Circuit
+from qoqo import operations as ops  # type: ignore
+from qoqo import Circuit  # type: ignore
 from typing import cast, Dict, List, Any, Tuple
 import numpy as np
 
@@ -178,11 +179,13 @@ def mocked_call_operation(
     elif "PragmaGetPauliProduct" in tags:
         operation = cast(ops.PragmaGetPauliProduct, operation)
         classical_float_registers[operation.readout()] = [
-            np.random.random(1).tolist(),
+            np.random.Generator(np.random.PCG64()).random(1).tolist(),
         ]
     elif "PragmaGetOccupationProbability" in tags:
         operation = cast(ops.PragmaGetOccupationProbability, operation)
-        classical_float_registers[operation.readout()] = np.random.random(number_qubits).tolist()
+        classical_float_registers[operation.readout()] = (
+            np.random.Generator(np.random.PCG64()).random(number_qubits).tolist()
+        )
     elif "PragmaGetStateVector" in tags:
         operation = cast(ops.PragmaGetStateVector, operation)
         values = np.random.default_rng().uniform(0, 1, (2**number_qubits, 2))
