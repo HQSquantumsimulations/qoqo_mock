@@ -4,11 +4,6 @@
 .. automodule:: qoqo_mock
 
    
-   
-   
-
-   
-   
    .. rubric:: Functions
 
    .. autosummary::
@@ -16,21 +11,9 @@
       mocked_call_circuit
       mocked_call_operation
    
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
    
       MockedBackend
    
-   
-
-   
-   
-   
-
-
-
