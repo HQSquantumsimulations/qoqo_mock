@@ -1,4 +1,5 @@
 """Mocked Backend."""
+
 # Copyright © 2019-2023 HQS Quantum Simulations GmbH. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -10,7 +11,7 @@
 # is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 # or implied. See the License for the specific language governing permissions and limitations under
 # the License.
-from qoqo import Circuit
+from qoqo import Circuit  # type: ignore
 from typing import Tuple, List, Dict, Any, Optional, cast
 from qoqo_mock import mocked_call_circuit
 
@@ -34,9 +35,7 @@ class MockedBackend(object):
         self.name = "mocked"
         self.number_qubits = number_qubits
 
-    def run_circuit(
-        self, circuit: Circuit
-    ) -> Tuple[
+    def run_circuit(self, circuit: Circuit) -> Tuple[
         Dict[str, List[List[bool]]],
         Dict[str, List[List[float]]],
         Dict[str, List[List[complex]]],
@@ -112,9 +111,7 @@ class MockedBackend(object):
             output_complex_register_dict,
         )
 
-    def run_measurement_registers(
-        self, measurement: Any
-    ) -> Tuple[
+    def run_measurement_registers(self, measurement: Any) -> Tuple[
         Dict[str, List[List[bool]]],
         Dict[str, List[List[float]]],
         Dict[str, List[List[complex]]],
