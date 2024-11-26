@@ -134,9 +134,9 @@ checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
 
 [[package]]
 name = "nalgebra"
-version = "0.32.6"
+version = "0.33.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b5c17de023a86f59ed79891b2e5d5a94c705dbe904a5b5c9c952ea6221b03e4"
+checksum = "26aecdf64b707efd1310e3544d709c5c0ac61c13756046aaaba41be5c4f66a3b"
 dependencies = [
  "approx",
  "matrixmultiply",
@@ -174,6 +174,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "num-bigint"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9"
+dependencies = [
+ "num-integer",
+ "num-traits",
+]
+
+[[package]]
 name = "num-complex"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -198,6 +208,7 @@ version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f83d14da390562dca69fc84082e73e548e1ad308d24accdedd2720017cb37824"
 dependencies = [
+ "num-bigint",
  "num-integer",
  "num-traits",
 ]
@@ -306,9 +317,9 @@ checksum = "60a357793950651c4ed0f3f52338f53b2f809f32d83a07f72909fa13e4c6c1e3"
 
 [[package]]
 name = "roqoqo"
-version = "1.15.2"
+version = "1.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f84906016a7e4001f4176f787980ccf057b34df51af6e3c62912e61968a723f"
+checksum = "b0c82b86e77bd26f733f170209b3e40bc1223584ea76c9e1f1be27a6b3f8dce4"
 dependencies = [
  "bincode",
  "nalgebra",
@@ -328,9 +339,9 @@ dependencies = [
 
 [[package]]
 name = "roqoqo-derive"
-version = "1.15.2"
+version = "1.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "424481b26f82c1b5c78e0d2b7457ad77d3bbd281f4e724882829160364733c1f"
+checksum = "e1fe05858034d48501fbe8816e29714d0a81cd0225d042764f99a6e24e38b829"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -349,14 +360,13 @@ dependencies = [
 
 [[package]]
 name = "roqoqo-test"
-version = "1.15.2"
+version = "1.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d73c2fcd37961b33be38d7beabb54663e5057532ad9c2e1b17666fa936aa8368"
+checksum = "1ef416952fe128a0ee4cac4056fe06577060229a47e1fdac9c7945ba070c597b"
 dependencies = [
  "nalgebra",
  "ndarray",
  "proc-macro2",
- "qoqo_calculator",
  "quote",
  "rand",
  "roqoqo",
@@ -447,9 +457,9 @@ dependencies = [
 
 [[package]]
 name = "simba"
-version = "0.8.1"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "061507c94fc6ab4ba1c9a0305018408e312e17c041eb63bef8aa726fa33aceae"
+checksum = "b3a386a501cd104797982c15ae17aafe8b9261315b5d07e3ec803f2ea26be0fa"
 dependencies = [
  "approx",
  "num-complex",
