@@ -7,6 +7,7 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 ## 0.5.9
 
 * Added a minimum rust version.
+* Updated to qoqo 1.16.
 
 ## 0.5.8
 
