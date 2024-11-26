@@ -1,6 +1,6 @@
 [project]
 name = "qoqo_mock"
-version = "0.5.8"
+version = "0.5.9"
 description = ""
 authors = [
     { name = "HQS Quantum Simulation GmbH", email = "info@quantumsimulations.de" },

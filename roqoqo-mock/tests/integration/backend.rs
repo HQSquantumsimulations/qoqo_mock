@@ -34,9 +34,6 @@ fn run_simple_circuit_measure_qubit() {
     assert_eq!(out_reg.len(), 1);
     for reg in out_reg.iter() {
         assert_eq!(reg.len(), 1);
-        for val in reg.iter() {
-            assert!(*val || !*val);
-        }
     }
 }
 
@@ -56,8 +53,6 @@ fn run_simple_circuit_repeated_meas() {
     assert_eq!(out_reg.len(), 20);
     for reg in out_reg.iter() {
         assert_eq!(reg.len(), 2);
-        assert!(reg[0] || !reg[0]);
-        assert!(reg[1] || !reg[1]);
     }
 }
 
