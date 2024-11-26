@@ -26,4 +26,4 @@ Mocks quantum computing simulation for performance tests.
 from qoqo_mock.interface import mocked_call_operation, mocked_call_circuit
 from qoqo_mock.backend import MockedBackend
 
-__all__ = ["mocked_call_circuit", "mocked_call_operation", "MockedBackend"]
+__all__ = ["MockedBackend", "mocked_call_circuit", "mocked_call_operation"]
