@@ -31,9 +31,6 @@ fn test_measure_qubit() {
     assert!(bit_registers.contains_key("ro"));
     let out_reg = bit_registers.get("ro").unwrap();
     assert_eq!(out_reg.len(), 1);
-    for reg in out_reg.iter() {
-        assert!(*reg || !*reg);
-    }
 }
 
 /// Test that PragmaRepeatedMeasurement returns the correct type of result
@@ -49,8 +46,6 @@ fn test_pragma_repeated_measurement() {
     assert_eq!(out_reg.len(), 20);
     for reg in out_reg.iter() {
         assert_eq!(reg.len(), 2);
-        assert!(reg[0] || !reg[0]);
-        assert!(reg[1] || !reg[1]);
     }
 }
 
@@ -125,19 +120,18 @@ fn test_pragma_get_density_matrix() {
     }
 }
 
+type BitMap = HashMap<String, BitRegister>;
+type FloatMap = HashMap<String, FloatRegister>;
+type ComplexMap = HashMap<String, ComplexRegister>;
+type BitOutputMap = HashMap<String, BitOutputRegister>;
+type ComplexOutputMap = HashMap<String, ComplexOutputRegister>;
 /// Helper function for the creation of the empty registers for the call_circuit function
-fn empty_regs() -> (
-    HashMap<String, BitRegister>,
-    HashMap<String, FloatRegister>,
-    HashMap<String, ComplexRegister>,
-    HashMap<String, BitOutputRegister>,
-    HashMap<String, ComplexOutputRegister>,
-) {
+fn empty_regs() -> (BitMap, FloatMap, ComplexMap, BitOutputMap, ComplexOutputMap) {
     let bit_register_dict: HashMap<String, BitRegister> = HashMap::new();
-    let float_register_dict: HashMap<String, FloatRegister> = HashMap::new();
-    let complex_register_dict: HashMap<String, ComplexRegister> = HashMap::new();
-    let output_bit_register_dict: HashMap<String, BitOutputRegister> = HashMap::new();
-    let output_complex_register_dict: HashMap<String, ComplexOutputRegister> = HashMap::new();
+    let float_register_dict: FloatMap = HashMap::new();
+    let complex_register_dict: ComplexMap = HashMap::new();
+    let output_bit_register_dict: BitOutputMap = HashMap::new();
+    let output_complex_register_dict: ComplexOutputMap = HashMap::new();
 
     (
         bit_register_dict,
