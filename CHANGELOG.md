@@ -4,6 +4,11 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
 
+## 0.5.10
+
+* Added explicit link to the API documentation in the readme.
+* Updated to roqoqo 1.21.
+
 ## 0.5.9
 
 * Added a minimum rust version.
