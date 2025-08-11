@@ -162,32 +162,32 @@ def mocked_call_operation(
     elif "DefinitionUsize" in tags:
         pass
     elif "MeasureQubit" in tags:
-        operation = cast(ops.MeasureQubit, operation)
+        operation = cast("ops.MeasureQubit", operation)
         res = np.random.randint(0, 1)  # noqa: NPY002
         if operation.readout() not in classical_bit_registers.keys():
             classical_bit_registers[operation.readout()] = [False for _ in range(number_qubits)]
         else:
-            index = cast(int, operation.readout_index())
+            index = cast("int", operation.readout_index())
             classical_bit_registers[operation.readout()][index] = res  # type: ignore
     elif "PragmaRepeatedMeasurement" in tags:
-        operation = cast(ops.PragmaRepeatedMeasurement, operation)
+        operation = cast("ops.PragmaRepeatedMeasurement", operation)
         output_bit_register_dict[operation.readout()] = np.random.randint(  # noqa: NPY002
             0, 2, size=(operation.number_measurements(), number_qubits)
         ).tolist()
         if operation.readout() in classical_bit_registers.keys():
             del classical_bit_registers[operation.readout()]
     elif "PragmaGetPauliProduct" in tags:
-        operation = cast(ops.PragmaGetPauliProduct, operation)
+        operation = cast("ops.PragmaGetPauliProduct", operation)
         classical_float_registers[operation.readout()] = [
             np.random.Generator(np.random.PCG64()).random(1).tolist(),
         ]
     elif "PragmaGetOccupationProbability" in tags:
-        operation = cast(ops.PragmaGetOccupationProbability, operation)
+        operation = cast("ops.PragmaGetOccupationProbability", operation)
         classical_float_registers[operation.readout()] = (
             np.random.Generator(np.random.PCG64()).random(number_qubits).tolist()
         )
     elif "PragmaGetStateVector" in tags:
-        operation = cast(ops.PragmaGetStateVector, operation)
+        operation = cast("ops.PragmaGetStateVector", operation)
         values = np.random.default_rng().uniform(0, 1, (2**number_qubits, 2))
         values_complex = values[..., 0] + 1j * values[..., 1]
         normalisation = 0
@@ -196,7 +196,7 @@ def mocked_call_operation(
         values_normalised = values_complex / normalisation
         classical_complex_registers[operation.readout()] = values_normalised.tolist()
     elif "PragmaGetDensityMatrix" in tags:
-        operation = cast(ops.PragmaGetDensityMatrix, operation)
+        operation = cast("ops.PragmaGetDensityMatrix", operation)
         qubits = np.random.randint(0, 2, size=number_qubits)  # noqa: NPY002
         statevector = np.array([1])
         for qubit in qubits:
