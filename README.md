@@ -23,6 +23,8 @@ qoqo-mock provides a mocked benchmarking backend for qoqo.
 qoqo circuits can be sent to the mock backend and all steps of a full hardware backend are applied, except calling actual quantum hardware. Measurements return random results.  
 This backend is designed purely for benchmarking purposes.
 
+The API documentation is available [here](https://hqsquantumsimulations.github.io/qoqo_mock/generated/qoqo_mock.html).
+
 A source distribution now exists but requires a Rust install with a rust version > 1.47 and a maturin version { >= 0.12, <0.13 } in order to be built.
 
 ## roqoqo-mock

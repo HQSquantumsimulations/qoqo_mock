@@ -56,11 +56,11 @@ type ComplexOutputRegisterMap = HashMap<String, ComplexOutputRegister>;
 ///
 /// * `circuit` - The qoqo Circuit that is executed.
 /// * `registers` - The five registers used in the Interface:
-///                 (1) HashMap containing bit readout values.
-///                 (2) HashMap containing float readout values.
-///                 (3) HashMap containing complex readout values.
-///                 (4) HashMap containing a register for each repetition of the circuit (bit readout values).
-///                 (5) HashMap containing a register for each repetition of the circuit (complex readout values).
+///   (1) HashMap containing bit readout values.
+///   (2) HashMap containing float readout values.
+///   (3) HashMap containing complex readout values.
+///   (4) HashMap containing a register for each repetition of the circuit (bit readout values).
+///   (5) HashMap containing a register for each repetition of the circuit (complex readout values).
 /// * `number_qubits: Number of qubits mocked.
 ///
 /// # Returns
@@ -125,11 +125,11 @@ pub fn call_circuit(
 ///
 /// * `operation` - The qoqo Operation that is executed.
 /// * `registers` - The five registers used in the Interface:
-///                 (1) HashMap containing bit readout values.
-///                 (2) HashMap containing float readout values.
-///                 (3) HashMap containing complex readout values.
-///                 (4) HashMap containing a register for each repetition of the circuit (bit readout values).
-///                 (5) HashMap containing a register for each repetition of the circuit (complex readout values).
+///   (1) HashMap containing bit readout values.
+///   (2) HashMap containing float readout values.
+///   (3) HashMap containing complex readout values.
+///   (4) HashMap containing a register for each repetition of the circuit (bit readout values).
+///   (5) HashMap containing a register for each repetition of the circuit (complex readout values).
 /// * `number_qubits: Number of qubits mocked.
 ///
 /// # Returns
@@ -191,8 +191,8 @@ pub fn call_operation(
             ))
         }
         Operation::PragmaGetPauliProduct(op) => {
-            let mut rng = rand::thread_rng();
-            let res: f64 = rng.gen::<f64>();
+            let mut rng = rand::rng();
+            let res: f64 = rng.random::<f64>();
             float_register_dict.insert(op.readout().to_string(), vec![res]);
             Ok((
                 bit_register_dict,
@@ -203,8 +203,8 @@ pub fn call_operation(
             ))
         }
         Operation::PragmaGetOccupationProbability(op) => {
-            let mut rng = rand::thread_rng();
-            let res: Vec<f64> = (0..number_qubits).map(|_| rng.gen::<f64>()).collect();
+            let mut rng = rand::rng();
+            let res: Vec<f64> = (0..number_qubits).map(|_| rng.random::<f64>()).collect();
             float_register_dict.insert(op.readout().to_string(), res);
             Ok((
                 bit_register_dict,
@@ -215,10 +215,10 @@ pub fn call_operation(
             ))
         }
         Operation::PragmaGetStateVector(op) => {
-            let mut rng = rand::thread_rng();
+            let mut rng = rand::rng();
             let shape = 2usize.pow(number_qubits as u32);
-            let res_real: Vec<f64> = (0..shape).map(|_| rng.gen::<f64>()).collect();
-            let res_imag: Vec<f64> = (0..shape).map(|_| rng.gen::<f64>()).collect();
+            let res_real: Vec<f64> = (0..shape).map(|_| rng.random::<f64>()).collect();
+            let res_imag: Vec<f64> = (0..shape).map(|_| rng.random::<f64>()).collect();
             let mut normalise: f64 = 0.0;
             let mut res_all: Vec<Complex64> = Vec::new();
             for (real, imag) in res_real.iter().zip(res_imag.iter()) {
@@ -241,8 +241,9 @@ pub fn call_operation(
             ))
         }
         Operation::PragmaGetDensityMatrix(op) => {
-            let mut rng = rand::thread_rng();
-            let res_qubits: Vec<usize> = (0..number_qubits).map(|_| rng.gen_range(0..2)).collect();
+            let mut rng = rand::rng();
+            let res_qubits: Vec<usize> =
+                (0..number_qubits).map(|_| rng.random_range(0..2)).collect();
 
             let matrix_0: Vec<Vec<Complex64>> =
                 vec![vec![Complex64::new(1.0, 0.0), Complex64::new(0.0, 0.0)]];
