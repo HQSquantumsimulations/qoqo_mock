@@ -4,6 +4,8 @@ This changelog track changes to the qoqo project starting at version 0.2.0
 
 ## Not released
 
+* Updated minimum supported Python version to 3.10.
+
 ## 0.5.10
 
 * Added explicit link to the API documentation in the readme.
